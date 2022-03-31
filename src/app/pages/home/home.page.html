@@ -9,15 +9,15 @@
         <h2>Rações</h2>
 
         <ion-slides mode="ios" pager="ios" scrollbar="false">
-            <ion-slide>
+            <ion-slide *ngFor="let p of produtos">
                 <ion-card>
                     <ion-card-header class="card_header">
-                        <ion-img [src]="image" class="card_image"></ion-img>
-                        <ion-card-title class="card_title">{{title}}</ion-card-title>
-                        <ion-card-subtitle class="card_subtitle">{{subtitle}}</ion-card-subtitle>
+                        <ion-img [src]="p.image" class="card_image"></ion-img>
+                        <ion-card-title class="card_title">{{p.title}}</ion-card-title>
+                        <ion-card-subtitle class="card_subtitle">{{p.subtitle}}</ion-card-subtitle>
                     </ion-card-header>
                     <ion-card-content class="card_content">
-                        {{price}}
+                        {{p.price}}
                     </ion-card-content>
                 </ion-card>
             </ion-slide>

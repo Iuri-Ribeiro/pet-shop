@@ -7,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-    title: String = "Ração Pedrigree";
-    subtitle: String = "Ração de 18kg da pedigree para cachorros adultos";
-    price: String = "R$ 70,00";
-    image: String = "../../../assets/img/produtos/racao.jpg";
+    produtos: any = [
+        {
+            title: "Ração Pedrigree",
+            subtitle: "Ração de 18kg da pedigree para cachorros adultos",
+            price: "R$ 192,59",
+            image: "../../../assets/img/produtos/racao.jpg"
+        },
+        {
+            title: "Ração Golden",
+            subtitle: "Ração de 10,1Kg da Golden para gatos filhotes, sabor frango",
+            price: "R$ 157,90",
+            image: "../../../assets/img/produtos/racao_gato.png"
+        },
+        {
+            title: "Ração Quatree",
+            subtitle: "Ração Quatree Gourmet para cachorros adultos de raças médias e grandes",
+            price: "R$ 42,99",
+            image: "../../../assets/img/produtos/racao2.jpg"
+        }
+    ]
 
     constructor() { }
 
