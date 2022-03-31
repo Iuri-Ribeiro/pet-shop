@@ -10,22 +10,16 @@
 
         <ion-slides mode="ios" pager="ios" scrollbar="false">
             <ion-slide>
-                <app-card-produto> </app-card-produto>
-            </ion-slide>
-            <ion-slide>
-                <app-card-produto> </app-card-produto>
-            </ion-slide>
-            <ion-slide>
-                <app-card-produto> </app-card-produto>
-            </ion-slide>
-            <ion-slide>
-                <app-card-produto> </app-card-produto>
-            </ion-slide>
-            <ion-slide>
-                <app-card-produto> </app-card-produto>
-            </ion-slide>
-            <ion-slide>
-                <app-card-produto> </app-card-produto>
+                <ion-card>
+                    <ion-card-header class="card_header">
+                        <ion-img [src]="image" class="card_image"></ion-img>
+                        <ion-card-title class="card_title">{{title}}</ion-card-title>
+                        <ion-card-subtitle class="card_subtitle">{{subtitle}}</ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content class="card_content">
+                        {{price}}
+                    </ion-card-content>
+                </ion-card>
             </ion-slide>
         </ion-slides>
 
