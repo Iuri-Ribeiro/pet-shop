@@ -31,4 +31,8 @@ export class ProdutoService {
   ]
 
   constructor() { }
+
+  public getAll(): Array<Produto> {
+    return this.produtos;
+  }
 }
