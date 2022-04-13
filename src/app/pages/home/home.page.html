@@ -10,7 +10,7 @@
 
         <ion-slides mode="ios" pager="ios" scrollbar="false">
             <ion-slide *ngFor="let p of produtos">
-                <ion-card>
+                <ion-card [routerLink]="['/produto-detalhes', p.id]">
                     <ion-card-header class="card_header">
                         <ion-img [src]="p.image" class="card_image"></ion-img>
                         <ion-card-title class="card_title">{{p.title}}</ion-card-title>
