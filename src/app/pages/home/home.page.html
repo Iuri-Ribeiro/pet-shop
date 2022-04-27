@@ -8,8 +8,10 @@
 
         <h2>Rações</h2>
 
-        <ion-slides mode="ios" pager="ios" scrollbar="false">
-            <ion-slide *ngFor="let p of produtos">
+        <swiper
+            
+        >
+            <ng-template swiperSlide *ngFor="let p of produtos">
                 <ion-card [routerLink]="['/produto-detalhes', p.id]">
                     <ion-card-header class="card_header">
                         <ion-img [src]="p.image" class="card_image"></ion-img>
@@ -20,8 +22,8 @@
                         {{p.price}}
                     </ion-card-content>
                 </ion-card>
-            </ion-slide>
-        </ion-slides>
+            </ng-template>
+        </swiper>
 
     </div>
 

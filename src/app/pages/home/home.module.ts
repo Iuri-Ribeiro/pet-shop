@@ -8,13 +8,15 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { HeaderComponent } from 'src/app/components/header/header.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    SwiperModule
   ],
   declarations: [HomePage, HeaderComponent]
 })
