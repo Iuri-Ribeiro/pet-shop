@@ -8,9 +8,7 @@
 
         <h2>Rações</h2>
 
-        <swiper
-            
-        >
+        <swiper>
             <ng-template swiperSlide *ngFor="let p of produtos">
                 <ion-card [routerLink]="['/produto-detalhes', p.id]">
                     <ion-card-header class="card_header">
