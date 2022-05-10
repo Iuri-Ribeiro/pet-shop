@@ -1,21 +1,21 @@
 export class Produto {
-    public id: number;
+    public id: string;
     public title: string;
     public subtitle: string;
-    public price: string;
+    public price: number;
     public image: string;
 
     constructor()
-    constructor(id?: number,
+    constructor(id?: string,
         title?: string,
         subtitle?: string,
-        price?: string,
+        price?: number,
         image?: string) {
 
-        this.id = id ? id : 0;
+        this.id = id ? id : '';
         this.title = title ? title : '';
         this.subtitle = subtitle ? subtitle : '';
-        this.price = price ? price : '';
+        this.price = price ? price : 0;
         this.image = image ? image : '';
     }
 

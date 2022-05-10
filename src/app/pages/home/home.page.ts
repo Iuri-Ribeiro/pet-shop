@@ -13,11 +13,22 @@ export class HomePage implements OnInit, AfterContentChecked {
 
     public produtos: Array<Produto> = [];
 
-    constructor(produtoService: ProdutoService) {
-        this.produtos = produtoService.getAll();
-    }
+    constructor(private produtoService: ProdutoService) { }
 
     ngOnInit() {
+        this.produtoService.getAll().subscribe((produtos) => {
+
+            this.produtos = produtos.map((produto) => {
+                return {
+                    id: produto.payload.doc.id,
+                    title: produto.payload.doc.data()['title'],
+                    subtitle: produto.payload.doc.data()['subtitle'],
+                    price: produto.payload.doc.data()['price'],
+                    image: produto.payload.doc.data()['image']
+                }
+            })
+
+        })
     }
 
     ngAfterContentChecked(): void {
