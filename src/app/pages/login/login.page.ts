@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cliente } from 'src/app/models/cliente.model';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
     selector: 'app-login',
@@ -7,33 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-    email: String;
-    senha: String;
-
-    usuarios = [
-        {
-            email: "iuri@gmail.com",
-            senha: "1234"
-        },
-        {
-            email: "maria@gamil.com",
-            senha: "4321"
-        }
-    ]
+    email: string;
+    senha: string;
+    usuario;
 
     image = "../../../assets/img/logo_size_invert.jpg";
 
-    constructor() { }
+    constructor(private clienteService: ClienteService) { }
 
     ngOnInit() {
     }
 
     login() {
-        this.usuarios.forEach(usuario => {
-            if (this.email == usuario.email && this.senha == usuario.senha) {
-                console.log("Logou");
-            }
-        })
+        
     }
 
 }

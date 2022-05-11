@@ -16,6 +16,7 @@ export class ProdutoDetalhesPage implements OnInit {
 
     ngOnInit() {
         const codigo: string = this.rotaAtiva.snapshot.paramMap.get('id');
+        console.log(codigo);
 
         this.produtoService.getById(codigo).then((produto) => {
             this.produto = produto;
