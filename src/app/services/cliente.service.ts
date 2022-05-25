@@ -20,7 +20,13 @@ export class ClienteService {
                     email: cliente['email'],
                     senha: cliente['senha'],
                     cpf: cliente['cpf'],
-                    enderecos: cliente['enderecos']
+                    cep: cliente['cep'],
+                    numero: cliente['numero'],
+                    logradouro: cliente['logradouro'],
+                    complemento: cliente['complemento'],
+                    bairro: cliente['bairro'],
+                    cidade: cliente['cidade'],
+                    estado: cliente['estados'],
                 }
             }
 

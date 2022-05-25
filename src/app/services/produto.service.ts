@@ -16,7 +16,7 @@ export class ProdutoService {
         return this.firestore.collection('produtos').snapshotChanges();
     }
 
-    public getById(id: string) {
+    public getById(id: string): Promise<Produto> {
         return this.firestore.collection('produtos').doc(id).ref.get().then((item) => {
             if(item.exists){
                 const produto = item.data();
@@ -27,10 +27,27 @@ export class ProdutoService {
                     subtitle: produto['subtitle'],
                     price: produto['price'] ,
                     image: produto['image']
-                }
+                };
             }
 
             return new Produto();
         })
+    }
+
+    public add(produto: Produto): Promise<unknown>{
+        delete produto.id;
+        return this.firestore.collection('produtos').add({
+            ...produto
+        });
+    }
+
+    public edit(produto: Produto): Promise<unknown>{
+        return this.firestore.doc(`produtos/${produto.id}`).update({
+            ...produto
+        });
+    }
+
+    public delete(id: string): Promise<void>{
+        return this.firestore.doc(`produtos/${id}`).delete();
     }
 }

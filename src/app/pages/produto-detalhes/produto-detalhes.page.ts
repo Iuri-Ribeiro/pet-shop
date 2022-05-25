@@ -10,13 +10,12 @@ import { ProdutoService } from 'src/app/services/produto.service';
 })
 export class ProdutoDetalhesPage implements OnInit {
 
-    public produto: Produto;
+    public produto: Produto = new Produto();
 
     constructor(private rotaAtiva: ActivatedRoute, private produtoService: ProdutoService) { }
 
     ngOnInit() {
         const codigo: string = this.rotaAtiva.snapshot.paramMap.get('id');
-        console.log(codigo);
 
         this.produtoService.getById(codigo).then((produto) => {
             this.produto = produto;
