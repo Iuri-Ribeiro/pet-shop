@@ -10,28 +10,13 @@ export class ClienteService {
 
     constructor(private firestore: AngularFirestore) { }
 
-    public getByEmail(email: string) {
-        return this.firestore.collection('clientes').doc(email).ref.get().then((item) => {
-            if(item.exists){
-                const cliente = item.data();
-                return {
-                    id: item.id,
-                    nome: cliente['nome'],
-                    email: cliente['email'],
-                    senha: cliente['senha'],
-                    cpf: cliente['cpf'],
-                    cep: cliente['cep'],
-                    numero: cliente['numero'],
-                    logradouro: cliente['logradouro'],
-                    complemento: cliente['complemento'],
-                    bairro: cliente['bairro'],
-                    cidade: cliente['cidade'],
-                    estado: cliente['estados'],
-                }
-            }
-
-            return new Cliente();
-        })
+    public getByUID(uid: string) {
+        return this.firestore
+            .collection(
+                'clientes',
+                ref =>
+                    ref.where('uid', '==', uid)
+            ).snapshotChanges();
     }
 
     public add(cliente: Cliente) {

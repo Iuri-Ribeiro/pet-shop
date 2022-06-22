@@ -1,5 +1,7 @@
-export class Cliente{
+export class Cliente {
     public id: string;
+    public uid: string;
+    public admin: boolean;
     public nome: string;
     public email: string;
     public senha: string;
@@ -25,7 +27,9 @@ export class Cliente{
         bairro?: string,
         cidade?: string,
         estado?: string,
-        ) {
+        uid?: string,
+        admin?: boolean,
+    ) {
 
         this.id = id ? id : '';
         this.nome = nome ? nome : '';
@@ -39,5 +43,7 @@ export class Cliente{
         this.bairro = bairro ? bairro : '';
         this.cidade = cidade ? cidade : '';
         this.estado = estado ? estado : '';
+        this.uid = uid ? uid : '';
+        this.admin = admin ? admin : false;
     }
 }

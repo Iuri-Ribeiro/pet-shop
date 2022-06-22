@@ -17,7 +17,7 @@ export class HomePage implements OnInit, AfterContentChecked {
 
     ngOnInit() {
         this.produtoService.getAll().subscribe((produtos) => {
-
+            // Falta separar os produtos por categorias
             this.produtos = produtos.map((produto) => {
                 return {
                     id: produto.payload.doc.id,
