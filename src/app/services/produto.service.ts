@@ -26,7 +26,8 @@ export class ProdutoService {
                     title: produto['title'],
                     subtitle: produto['subtitle'],
                     price: produto['price'] ,
-                    image: produto['image']
+                    image: produto['image'],
+                    categoria: produto['categoira']
                 };
             }
 
