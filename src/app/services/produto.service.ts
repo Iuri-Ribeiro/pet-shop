@@ -27,12 +27,12 @@ export class ProdutoService {
                     subtitle: produto['subtitle'],
                     price: produto['price'] ,
                     image: produto['image'],
-                    categoria: produto['categoira']
+                    categoria: produto['categoira'],
                 };
             }
 
             return new Produto();
-        })
+        });
     }
 
     public add(produto: Produto): Promise<unknown>{

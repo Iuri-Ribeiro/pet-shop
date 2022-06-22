@@ -24,7 +24,8 @@ export class HomePage implements OnInit, AfterContentChecked {
                     title: produto.payload.doc.data()['title'],
                     subtitle: produto.payload.doc.data()['subtitle'],
                     price: produto.payload.doc.data()['price'],
-                    image: produto.payload.doc.data()['image']
+                    image: produto.payload.doc.data()['image'],
+                    categoria: produto.payload.doc.data()['categoria'],
                 }
             })
 
