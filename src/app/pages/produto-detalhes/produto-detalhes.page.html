@@ -18,15 +18,15 @@
         </ion-card>
 
         <div class="botoes">
-            <ion-button *ngIf="!admin">
+            <ion-button *ngIf="!admin" color="secondary">
                 Comprar
             </ion-button>
 
-            <ion-button *ngIf="admin" (click)="editar()">
+            <ion-button *ngIf="admin" (click)="editar()" color="secondary">
                 Editar
             </ion-button>
 
-            <ion-button *ngIf="admin" (click)="abrirAlerta()">
+            <ion-button *ngIf="admin" (click)="abrirAlerta()" color="secondary">
                 Excluir
             </ion-button>
         </div>

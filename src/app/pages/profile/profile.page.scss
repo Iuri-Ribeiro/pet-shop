@@ -9,3 +9,25 @@
 .profile_button{
     width: 15rem;
 }
+
+.container_foto{
+    display: flex;
+    justify-content: center;
+}
+
+.foto{
+    border-radius: 100%;
+    width: 8rem;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: column;
+}

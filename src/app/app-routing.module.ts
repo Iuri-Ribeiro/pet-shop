@@ -26,7 +26,13 @@ const routes: Routes = [
   {
     path: 'produto-detalhes/:id',
     loadChildren: () => import('./pages/produto-detalhes/produto-detalhes.module').then(m => m.ProdutoDetalhesPageModule)
+  },
+  {
+    path: 'criar-produto',
+    loadChildren: () => import('./pages/criar-produto/criar-produto.module').then(m => m.CriarProdutoPageModule),
+    canActivate: [AuthGuardService]
   }
+
 ];
 @NgModule({
   imports: [

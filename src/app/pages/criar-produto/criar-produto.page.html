@@ -1,0 +1,53 @@
+<ion-header>
+    <app-header titulo="Criar Produto"></app-header>
+</ion-header>
+
+
+<ion-content>
+    <form>
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title class="ion-text-center" style="font-weight: bold;">Produto novo</ion-card-title>
+            </ion-card-header>
+
+            <div style="text-align: center;">
+                <img style="width: 250px;" *ngIf="produto.foto" [src]="produto.foto"><img>
+            </div>
+
+
+            <ion-card-content>
+                <ion-item>
+                    <ion-label position="floating" style="font-weight: bold;">Foto</ion-label>
+                    <ion-input type="text" name="foto" [(ngModel)]="produto.foto"
+                        placeholder="Informe a foto do produto">
+                    </ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating" style="font-weight: bold;">Nome</ion-label>
+                    <ion-input type="text" name="nome" [(ngModel)]="produto.nome"
+                        placeholder="Informe o nome do produto">
+                    </ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating" style="font-weight: bold;">Preço</ion-label>
+                    <ion-input type="number" name="preco" [(ngModel)]="produto.preco"
+                        placeholder="Informe o preço do produto">
+                    </ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating" style="font-weight: bold;">Descrição</ion-label>
+                    <ion-textarea name="descricao" [(ngModel)]="produto.descricao"
+                        placeholder="Descreva o produto aqui.">
+                    </ion-textarea>
+                </ion-item>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-button (click)="cadastrar()" color="secondary">
+            Salvar
+        </ion-button>
+    </form>
+</ion-content>

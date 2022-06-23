@@ -10,15 +10,15 @@ import { Cliente } from 'src/app/models/cliente.model';
 export class AutenticacaoService {
     private isAutenticado: boolean = false;
 
-    constructor(private rota: Router, private fireAuth: AngularFireAuth) {}
+    constructor(private rota: Router, private fireAuth: AngularFireAuth) { }
 
     public logar(cliente: Cliente) {
-      return this.fireAuth.signInWithEmailAndPassword(cliente.email, cliente.senha);
+        return this.fireAuth.signInWithEmailAndPassword(cliente.email, cliente.senha);
     }
 
     public registrar(cliente: Cliente) {
         return this.fireAuth
-                   .createUserWithEmailAndPassword(cliente.email, cliente.senha);
+            .createUserWithEmailAndPassword(cliente.email, cliente.senha);
     }
 
     public deslogar() {

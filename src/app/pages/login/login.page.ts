@@ -47,7 +47,8 @@ export class LoginPage implements OnInit {
                         complemento: usuarioLogado.payload.doc.data()['complemento'],
                         bairro: usuarioLogado.payload.doc.data()['bairro'],
                         cidade: usuarioLogado.payload.doc.data()['cidade'],
-                        estado: usuarioLogado.payload.doc.data()['estado']
+                        estado: usuarioLogado.payload.doc.data()['estado'],
+                        foto: usuarioLogado.payload.doc.data()['foto']
                     }
 
                     Storage.set({

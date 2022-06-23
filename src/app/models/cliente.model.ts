@@ -13,6 +13,7 @@ export class Cliente {
     public bairro: string;
     public cidade: string;
     public estado: string;
+    public foto: string;
 
     constructor()
     constructor(id?: string,
@@ -28,6 +29,7 @@ export class Cliente {
         cidade?: string,
         estado?: string,
         uid?: string,
+        foto?: string,
         admin?: boolean,
     ) {
 
@@ -44,6 +46,7 @@ export class Cliente {
         this.cidade = cidade ? cidade : '';
         this.estado = estado ? estado : '';
         this.uid = uid ? uid : '';
+        this.foto = foto ? foto : '';
         this.admin = admin ? admin : false;
     }
 }

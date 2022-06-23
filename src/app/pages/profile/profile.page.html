@@ -4,7 +4,8 @@
 
 <ion-content>
 
-    <div class="container">
+    <!-- Deslogado -->
+    <div class="container" *ngIf="!logado">
 
         <ion-button mode="ios" routerLink="/register" color="secondary" class="profile_button">
             Cadastrar
@@ -16,4 +17,50 @@
 
     </div>
 
+    <!-- Logado Normal -->
+    <div *ngIf="logado && !admin">
+        Normal
+    </div>
+
+    <!-- Logado Admin -->
+    <div *ngIf="logado && admin" class="container">
+
+        <div class="infos">
+
+            <div class="container_foto">
+                <img *ngIf="cliente.foto" [src]="cliente.foto" class="foto">
+            </div>
+
+            <div>
+                <h6>
+                    <strong>
+                        Nome:
+                    </strong>
+                    {{cliente.nome}}
+                </h6>
+
+                <h6>
+                    <strong>
+                        Email:
+                    </strong>
+                    {{cliente.email}}
+                </h6>
+            </div>
+
+            <div class="botoes">
+                <!-- <ion-button color="secondary">
+                    Alterar Senha
+                </ion-button> -->
+
+                <ion-button color="secondary" [routerLink]="['/criar-produto']">
+                    Criar Produto
+                </ion-button>
+
+                <ion-button color="secondary" (onClick)="sair()">
+                    Sair
+                </ion-button>
+            </div>
+
+        </div>
+    </div>
 </ion-content>
